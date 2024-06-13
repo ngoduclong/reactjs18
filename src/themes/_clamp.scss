@@ -1,0 +1,40 @@
+@use "sass:math";
+
+@function pow($x, $n) {
+  $ret: 1;
+
+  @if $n>=0 {
+    @for $i from 1 through $n {
+      $ret: $ret * $x;
+    }
+  }
+
+  @else {
+    @for $i from $n to 0 {
+      $ret: $ret / $x;
+    }
+  }
+
+  @return $ret;
+}
+
+@function to-fixed($float, $digits: 4) {
+  $sass-precision: 5;
+
+  @if $digits>$sass-precision {
+    @warn "Sass sets default precision to #{$sass-precision} digits, and there is no way to change that for now.";
+  }
+
+  $pow: pow(10, $digits);
+  @return math.div(round($float * $pow), $pow);
+}
+
+@function clampFunc($valueMax, $valueMin, $wMax: 1920, $wMin: 360) {
+  $slope: math.div(($valueMax - $valueMin), ($wMax - $wMin));
+  $yAxisIntersection: to-fixed(-$wMin * $slope + $valueMin);
+  $slopeRounded: to-fixed($slope, 6); // Rounding slope to 6 decimal places
+  $yAxisIntersectionRounded: to-fixed($yAxisIntersection); // Rounding intersection point
+  @return clamp(#{$valueMin}px,
+    #{$yAxisIntersectionRounded}px + #{to-fixed($slopeRounded * 100)}vw,
+    #{$valueMax}px);
+}
