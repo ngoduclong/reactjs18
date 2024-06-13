@@ -12,6 +12,8 @@ function HomePage() {
     dispatch(getExampleAction(1));
   }, [dispatch]);
 
+  consosle.log(123);
+
   useEffect(() => {
     getExample();
   }, [getExample]);
