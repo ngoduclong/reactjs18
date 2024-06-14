@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import AuthLayout from '@/layout/AuthLayout';
-import PublicLayout from '@/layout/PublicLayout';
+import AuthLayout from '@/layouts/AuthLayout';
+import PublicLayout from '@/layouts/PublicLayout';
 import NotFoundPage from '@/pages/NotFound';
 import { RoutePaths } from './routes-constants';
 import { userLoader } from './loaders';

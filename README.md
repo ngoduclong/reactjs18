@@ -25,6 +25,51 @@ export default {
 };
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Requirements
+
+- Node.js 20+ and yarn/npm
+
+### Tech Stack
+
+- React v18, React router dom, Vite, Typescript
+- Redux, Redux toolkit, Axios
+- Ant Design, SCSS
+
+### Getting started
+
+Run the following command on your local environment
+
+```shell
+yarn
+```
+
+Then, you can run the project locally in development mode with live reload by executing:
+
+```shell
+yarn dev
+```
+
+## Project structure
+
+```shell
+.
+├── README.md                       # README file
+├── .husky                          # Husky configuration
+├── public                          # Public assets folder
+├── src
+│   ├── assets                      # Include images, icons, and fonts
+│   ├── components                  # Shared base components
+│   ├── containers                  # Containers as modal, form, section,...
+│   ├── configs                     # Configs
+│   ├── interfaces                  # Declare types/interfaces
+│   ├── layouts                     # Layouts
+│   ├── pages                       # Pages
+│   ├── routes                      # Define routes
+│   └── services                    # Services
+│   └── stores                      # Stores
+│   └── themes                      # Declare css variables, common css
+│   └── utils                       # Utils
+│   └── variables                   # Variables (enums, constants)
+│   └── services                    # Services
+└── tsconfig.json                   # TypeScript configuration
+```
