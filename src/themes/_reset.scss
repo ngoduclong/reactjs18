@@ -1,3 +1,5 @@
+@import '_fonts.scss';
+
 /* Base CSS Reset */
 html,
 body,
@@ -128,6 +130,7 @@ table {
 /* Set default font and background */
 body {
   color: #000;
+  font-family: 'Poppins-400';
 }
 
 /* Optional: Reset for buttons and form elements */
