@@ -1,7 +1,8 @@
+import { useCallback, useEffect } from 'react';
+
 import { useAppDispatch, useAppSelector } from '@/stores';
 import { getExampleAction } from '@/stores/example';
-import { useCallback, useEffect } from 'react';
-import '@/themes/_reset.scss';
+import './Home.scss';
 
 function HomePage() {
   const dispatch = useAppDispatch();

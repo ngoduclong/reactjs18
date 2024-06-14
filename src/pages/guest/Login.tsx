@@ -1,4 +1,4 @@
-function LoginPage () {
+function LoginPage() {
   return <div className="LoginPage">LoginPage</div>;
 }
 
